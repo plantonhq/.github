@@ -6,7 +6,7 @@
 
 [![Website](https://img.shields.io/badge/Website-planton.ai-7c3aed?style=for-the-badge)](https://planton.ai)
 [![Console](https://img.shields.io/badge/Console-console.planton.ai-0ea5e9?style=for-the-badge)](https://console.planton.ai)
-[![License](https://img.shields.io/badge/License-Apache%202.0-10b981?style=for-the-badge)](https://github.com/project-planton/project-planton/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-10b981?style=for-the-badge)](https://github.com/plantonhq/project-planton/blob/main/LICENSE)
 
 **120+ Deployment Components** • **450+ Production Deployments** • **100% Customer Retention**
 
@@ -22,7 +22,7 @@ Planton combines **open source infrastructure modules** with a **commercial orch
 - **120+ Terraform & Pulumi deployment modules** for AWS, GCP, Azure, DigitalOcean, Civo, Cloudflare
 - **CLI tools** for local infrastructure management (`project-planton`)
 - **Schema definitions** and validation rules (Protocol Buffers)
-- **All code public and auditable** at [github.com/project-planton/project-planton](https://github.com/project-planton/project-planton)
+- **All code public and auditable** at [github.com/plantonhq/project-planton](https://github.com/plantonhq/project-planton)
 
 ### Planton Cloud (Commercial Platform)
 - **SaaS orchestration** layer that runs the open source modules
@@ -106,7 +106,7 @@ No proprietary formats. No vendor lock-in by design.
 
 | Repository | Description | Status |
 |------------|-------------|--------|
-| [project-planton/project-planton](https://github.com/project-planton/project-planton) | Main monorepo with 120+ deployment components | ⭐ Active |
+| [project-planton/project-planton](https://github.com/plantonhq/project-planton) | Main monorepo with 120+ deployment components | ⭐ Active |
 | [plantonhq/homebrew-tap](https://github.com/plantonhq/homebrew-tap) | Homebrew formulae for CLI installation | 🍺 Maintained |
 | [plantonhq/infra-charts](https://github.com/plantonhq/infra-charts) | Infrastructure orchestration charts | 📦 Active |
 | [plantonhq/tekton-hub](https://github.com/plantonhq/tekton-hub) | Tekton pipeline catalog | 🔧 Active |
@@ -153,10 +153,10 @@ We welcome contributions to deployment modules, CLI tools, and documentation!
 ### 🛠️ Contributor?
 **Want to improve open source DevOps tooling?**
 
-- ⭐ [Star project-planton](https://github.com/project-planton/project-planton)
-- 🍴 [Fork and modify modules](https://github.com/project-planton/project-planton)
-- 🐛 [Report bugs or request features](https://github.com/project-planton/project-planton/issues)
-- 📝 [Read contribution guidelines](https://github.com/project-planton/project-planton/blob/main/CONTRIBUTING.md)
+- ⭐ [Star project-planton](https://github.com/plantonhq/project-planton)
+- 🍴 [Fork and modify modules](https://github.com/plantonhq/project-planton)
+- 🐛 [Report bugs or request features](https://github.com/plantonhq/project-planton/issues)
+- 📝 [Read contribution guidelines](https://github.com/plantonhq/project-planton/blob/main/CONTRIBUTING.md)
 
 **All deployment modules are Apache 2.0**
 
@@ -203,9 +203,9 @@ We welcome contributions to deployment modules, CLI tools, and documentation!
 
 *Use Planton because it's the best platform—not because switching is too expensive.*
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-10b981)](https://github.com/project-planton/project-planton/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-10b981)](https://github.com/plantonhq/project-planton/blob/main/LICENSE)
 [![Multi-Cloud](https://img.shields.io/badge/Multi--Cloud-AWS%20%7C%20GCP%20%7C%20Azure-7c3aed)](https://planton.ai)
-[![Open Source](https://img.shields.io/badge/Open%20Source-120%2B%20Modules-0ea5e9)](https://github.com/project-planton/project-planton)
+[![Open Source](https://img.shields.io/badge/Open%20Source-120%2B%20Modules-0ea5e9)](https://github.com/plantonhq/project-planton)
 
 </div>
 
