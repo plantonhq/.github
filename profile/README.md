@@ -40,7 +40,6 @@ Every infrastructure module is Apache 2.0. Audit it, fork it, or run it without 
 | [planton-mcp-server](https://github.com/plantonhq/planton-mcp-server) | The platform's own operations over MCP, for agents that want to build, apply, and deploy directly. |
 | [homebrew-tap](https://github.com/plantonhq/homebrew-tap) | `brew install plantonhq/tap/planton`. |
 | [install-planton-cli-action](https://github.com/plantonhq/install-planton-cli-action), [planton-cli-login-action](https://github.com/plantonhq/planton-cli-login-action) | The CLI inside GitHub Actions. |
-| [tekton-cloud-event-router](https://github.com/plantonhq/tekton-cloud-event-router) | Routes Tekton CloudEvents to the receiver for their namespace. |
 
 ## Start Tonight
 
