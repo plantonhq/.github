@@ -1,211 +1,67 @@
-# DevOps Infrastructure as Open Source
+<!-- The organization's front door. Every sentence here about what Planton is or does mirrors the
+     Planton story, which is told once and projected onto this page, the website, and the
+     open-source README. The printed counts (700+, 8, 18, 17, 4) come from
+     site/src/data/platform-stats.ts in plantonhq/planton, which records how each one was counted.
+     Never retype a number here; change it there first. -->
 
-<div align="center">
+<p align="center">
+  <img src="https://github.com/plantonhq/planton/raw/main/.github/icon.png" alt="Planton" width="72">
+</p>
 
-**Deploy production infrastructure in minutes, not weeks.**
+# Planton: The Self-Service Cloud Platform
 
-[![Website](https://img.shields.io/badge/Website-planton.ai-7c3aed?style=for-the-badge)](https://planton.ai)
-[![Console](https://img.shields.io/badge/Console-console.planton.ai-0ea5e9?style=for-the-badge)](https://console.planton.ai)
-[![License](https://img.shields.io/badge/License-Apache%202.0-10b981?style=for-the-badge)](https://github.com/plantonhq/project-planton/blob/main/LICENSE)
+Your coding agent can already create cloud infrastructure. What it creates is unverified, unrecorded, and unrepeatable: nobody priced it, nobody checked the permissions, nothing remembers what was made, and the next environment starts from a blank prompt.
 
-**120+ Deployment Components** • **450+ Production Deployments** • **100% Customer Retention**
+Planton turns your own cloud account into a self-service platform. AI designs the infrastructure, the platform verifies the cost and permissions before anything is created, and the design is published as an Infra Chart, a template your whole team can deploy. Your services then ship onto that infrastructure straight from Git. It sits beside the coding agent and the cloud CLI you already use; nothing about how you work changes.
 
-</div>
+- **Infra Hub** is Cursor for cloud infrastructure: describe what you need, watch it compose, see the monthly cost and the IAM policy before anything exists, deploy, and publish it as an Infra Chart.
+- **Service Hub** is Vercel for backend, in your own cloud: connect a repository and every push becomes a running deployment, with the result written back into GitHub checks and deployments. No pipeline YAML, no Dockerfile required.
 
----
+## Proof at Creation, Not Observation After
 
-## 🚀 What is Planton?
+Every change Planton deploys is:
 
-Planton combines **open source infrastructure modules** with a **commercial orchestration platform** to eliminate DevOps bottlenecks.
+- **Priced before it exists**, with its coverage stated: an exact monthly figure with line items, a range, or plainly "unpriced". A zero never stands in for unknown. The least-privilege permission policy is derived from exactly what is composed, and every covered component states which of a fixed list of 17 technical controls it enforces, with evidence.
+- **Held to your rules no matter who asked.** A deployment budget pauses a deploy whose verified cost exceeds it, for a human decision. Protected environments refuse self-approval. The catalog can be curated to the component kinds your organization allows. A sensitive field takes a managed secret, never a pasted value. The console, the CLI, and the coding agent see the same list and refuse the same things.
+- **Left behind as a record.** One immutable stack job holds the exact configuration that was deployed, the cost fact, the budget verdict, who approved and why, and a snapshot of what exists afterward, queryable by resource, environment, time, and outcome.
 
-### Project Planton (Open Source)
-- **120+ Terraform & Pulumi deployment modules** for AWS, GCP, Azure, DigitalOcean, Civo, Cloudflare
-- **CLI tools** for local infrastructure management (`project-planton`)
-- **Schema definitions** and validation rules (Protocol Buffers)
-- **All code public and auditable** at [github.com/plantonhq/project-planton](https://github.com/plantonhq/project-planton)
+## Runs Where You Decide
 
-### Planton Cloud (Commercial Platform)
-- **SaaS orchestration** layer that runs the open source modules
-- **Service Hub** for backend CI/CD (Tekton-powered)
-- **AI Agents** for DevOps automation (Beta)
-- **Multi-cloud management** without vendor lock-in
+Hosted at [planton.ai](https://planton.ai), self-hosted on your own Kubernetes cluster with a license that verifies offline, or free on your laptop as Planton Desktop. In every shape it is your cloud account, your keys, your state, and your bill. Connections can be keyless, so no long-lived cloud credential is ever stored. If you leave, you take your manifests and keep deploying them with the open-source CLI.
 
-**The Difference**: With Terraform Cloud or Pulumi Cloud, *you write and maintain modules yourself*. With Planton, we provide 120+ production-ready modules that you can audit, fork, or use independently.
+## What Is Open Source Here
 
----
+Every infrastructure module is Apache 2.0. Audit it, fork it, or run it without the platform.
 
-## 📦 Open Source Deployment Components
+| Repository | What it holds |
+|---|---|
+| [planton](https://github.com/plantonhq/planton) | The catalog: 700+ component kinds across 8 cloud providers, each a typed schema with a cost fact sheet, a control posture with evidence (17 controls, 4 framework crosswalks), and least-privilege runner permissions. 18 Infra Charts. The `planton` CLI and the IaC engine. The source of [planton.ai](https://planton.ai). |
+| [skills](https://github.com/plantonhq/skills) | The agent skills Cursor, Claude Code, Codex, and every Agent Skills host load, so your agent composes, validates, prices, and deploys from the same craft the platform's own assistant uses. |
+| [planton-mcp-server](https://github.com/plantonhq/planton-mcp-server) | The platform's own operations over MCP, for agents that want to build, apply, and deploy directly. |
+| [homebrew-tap](https://github.com/plantonhq/homebrew-tap) | `brew install plantonhq/tap/planton`. |
+| [install-planton-cli-action](https://github.com/plantonhq/install-planton-cli-action), [planton-cli-login-action](https://github.com/plantonhq/planton-cli-login-action) | The CLI inside GitHub Actions. |
+| [tekton-cloud-event-router](https://github.com/plantonhq/tekton-cloud-event-router) | Routes Tekton CloudEvents to the receiver for their namespace. |
 
-All infrastructure modules are **100% open source**. Audit every line of code, fork for customization, or use independently of the platform.
+## Start Tonight
 
-### Cloud Infrastructure
-- **Networking**: VPC, Subnets, NAT Gateways, Route Tables
-- **DNS & Certificates**: Route53, Cloud DNS, ACM, Let's Encrypt
-- **Load Balancing**: ALB, NLB, Cloud Load Balancer, Application Gateway
+- **Planton Desktop** is free for individuals forever, commercial use included: [planton.ai](https://planton.ai).
+- **Teach your coding agent**: `npx skills add plantonhq/skills`, then read [Coding Agents](https://planton.ai/docs/coding-agents).
+- **From the terminal**: `brew install plantonhq/tap/planton`, then the [Getting Started guide](https://planton.ai/docs/getting-started).
+- **For a team**: the hosted free tier needs no card, and nobody below the self-serve ceiling talks to sales. [Pricing](https://planton.ai/pricing).
 
-### Container Platforms
-- **AWS**: ECS, EKS, App Runner
-- **GCP**: GKE, Cloud Run, Artifact Registry
-- **Azure**: AKS, Container Apps, Container Registry
-- **Kubernetes**: Standard K8s deployments across any provider
+## In Their Words
 
-### Databases & Storage
-- **Relational**: PostgreSQL, MySQL, Aurora, Cloud SQL
-- **NoSQL**: MongoDB, DynamoDB, Firestore, Cosmos DB
-- **Caching**: Redis, Memcached, Elasticache
-- **Object Storage**: S3, GCS, Azure Blob Storage
+> "As a junior DevOps engineer with almost no AWS experience, Planton enabled me to provide a very mature developer experience to our entire 7-person dev team. They can quickly deploy services to multiple environments without me having to deal with learning AWS from scratch or rewriting complex infrastructure code."
+>
+> Sai Saketh, Junior DevOps Engineer, iorta TechNext
 
-### Queues & Streaming
-- **Message Queues**: SQS, Pub/Sub, Service Bus, RabbitMQ
-- **Event Streaming**: Kafka, Kinesis, Event Hubs
+Teams have run production on Planton since 2023. Planton runs on Planton.
 
-### Quick Start
+## Community
 
-```bash
-# Install CLI
-brew install project-planton/tap/project-planton
+- Questions and ideas: [Discord](https://discord.gg/pwcSapdQAp)
+- Bugs and requests: [issues on plantonhq/planton](https://github.com/plantonhq/planton/issues)
+- Contributing: [CONTRIBUTING.md](https://github.com/plantonhq/planton/blob/main/CONTRIBUTING.md) and the [CLA](https://github.com/plantonhq/planton/blob/main/CLA.md)
+- Documentation: [planton.ai/docs](https://planton.ai/docs)
 
-# Deploy AWS ECS environment
-planton chart install aws-ecs \
-  --name api \
-  --env prod \
-  --values values.yaml
-
-# Output:
-# ✓ VPC created (3m 12s)
-# ✓ Load Balancer configured (4m 45s)
-# ✓ ECR registry ready (1m 30s)
-# ✓ SSL certificates issued (2m 15s)
-# ✓ DNS configured (1m 8s)
-# ⚡ Complete in 12 minutes
-```
-
----
-
-## 🏗️ Built on Open Standards
-
-No proprietary formats. No vendor lock-in by design.
-
-| Standard | Technology | Why |
-|----------|-----------|-----|
-| **IaC** | Terraform & Pulumi | Not a custom DSL—use the tools you know |
-| **CI/CD** | Tekton (CNCF Graduated) | Kubernetes-native, portable, extensible |
-| **Git** | GitHub & GitLab | OAuth integration, existing workflows |
-| **Containers** | Docker & Kubernetes | Standard OCI images, vanilla K8s resources |
-| **Schemas** | Protocol Buffers | Language-agnostic validation and code generation |
-
-**Exit Strategy Built-In**:
-1. Export all configurations as YAML manifests (one API call)
-2. Use `project-planton` CLI independently from your own CI/CD
-3. Fork and modify any deployment module on GitHub
-4. Migrate to GitHub Actions using exported Tekton pipelines
-
----
-
-## 📚 Key Repositories
-
-| Repository | Description | Status |
-|------------|-------------|--------|
-| [project-planton/project-planton](https://github.com/plantonhq/project-planton) | Main monorepo with 120+ deployment components | ⭐ Active |
-| [plantonhq/homebrew-tap](https://github.com/plantonhq/homebrew-tap) | Homebrew formulae for CLI installation | 🍺 Maintained |
-| [plantonhq/infra-charts](https://github.com/plantonhq/infra-charts) | Infrastructure orchestration charts | 📦 Active |
-| [plantonhq/tekton-hub](https://github.com/plantonhq/tekton-hub) | Tekton pipeline catalog | 🔧 Active |
-
----
-
-## 🤝 Community & Contributing
-
-We welcome contributions to deployment modules, CLI tools, and documentation!
-
-- **💬 Community Discussions**: [GitHub Discussions](https://github.com/orgs/plantonhq/discussions) (coming soon)
-- **🐛 Report Issues**: File issues in respective repositories
-- **📖 Documentation**: [docs.planton.ai](https://docs.planton.ai) (coming soon)
-- **🎯 Good First Issues**: Look for `good-first-issue` labels across repos
-
-### How to Contribute
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes with tests
-4. Submit a pull request
-5. Celebrate 🎉
-
----
-
-## 🎯 Are You a...
-
-<table>
-<tr>
-<td width="50%">
-
-### 👨‍💻 User?
-**Want to deploy infrastructure without the wait?**
-
-- 🚀 [Try Planton Cloud](https://console.planton.ai) (100 free automation minutes)
-- 📖 [Read the Docs](https://planton.ai) 
-- 🎥 [Watch 5-Min Demo](https://docs.google.com/forms/d/17tEVBbpIGl0AR4M75IOBYj4Ywap1RPCzZc4HMWA-67U)
-- 💰 [See Pricing](https://planton.ai/#pricing)
-
-**Starting at $20/developer/month**
-
-</td>
-<td width="50%">
-
-### 🛠️ Contributor?
-**Want to improve open source DevOps tooling?**
-
-- ⭐ [Star project-planton](https://github.com/plantonhq/project-planton)
-- 🍴 [Fork and modify modules](https://github.com/plantonhq/project-planton)
-- 🐛 [Report bugs or request features](https://github.com/plantonhq/project-planton/issues)
-- 📝 [Read contribution guidelines](https://github.com/plantonhq/project-planton/blob/main/CONTRIBUTING.md)
-
-**All deployment modules are Apache 2.0**
-
-</td>
-</tr>
-</table>
-
----
-
-## 🌟 Why Planton?
-
-| Feature | Terraform Cloud | Pulumi Cloud | Planton |
-|---------|-----------------|--------------|---------|
-| **Setup Time** | 1-2 days | 1-2 days | <1 hour |
-| **Monthly Cost** (7 devs) | $1,200+ | $1,000+ | $450 |
-| **Backend CI/CD** | ❌ Build yourself | ❌ Build yourself | ✅ Included (Tekton) |
-| **Out-of-the-box Infra** | ❌ Write all modules | ⚠️ Limited components | ✅ 120+ components |
-| **CLI Open Source** | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Deployment Modules Open Source** | ❌ You write your own | ❌ You write your own | ✅ All 120+ on GitHub |
-| **Platform (SaaS) Open Source** | ❌ Proprietary | ❌ Proprietary | ❌ Proprietary |
-| **Exit Strategy** | ⚠️ Migration cost | ⚠️ Migration cost | ✅ Export everything |
-
-**Real Customer Results**:
-- **<1 hour** infrastructure deployment (vs. weeks manual)
-- **96% cost reduction** vs. hiring DevOps engineer
-- **100% customer retention** since launch
-- **450+ production deployments** completed
-
----
-
-## 📬 Connect With Us
-
-- 🌐 **Website**: [planton.ai](https://planton.ai)
-- 🖥️ **Platform**: [console.planton.ai](https://console.planton.ai)
-- 🐙 **GitHub**: [@plantonhq](https://github.com/plantonhq)
-- 🐦 **Twitter**: [@plantonhq](https://twitter.com/plantonhq)
-- 💼 **LinkedIn**: [plantoncloud](https://linkedin.com/company/plantoncloud)
-
----
-
-<div align="center">
-
-**Built by DevOps engineers who felt the pain.**
-
-*Use Planton because it's the best platform—not because switching is too expensive.*
-
-[![License](https://img.shields.io/badge/License-Apache%202.0-10b981)](https://github.com/plantonhq/project-planton/blob/main/LICENSE)
-[![Multi-Cloud](https://img.shields.io/badge/Multi--Cloud-AWS%20%7C%20GCP%20%7C%20Azure-7c3aed)](https://planton.ai)
-[![Open Source](https://img.shields.io/badge/Open%20Source-120%2B%20Modules-0ea5e9)](https://github.com/plantonhq/project-planton)
-
-</div>
-
+The code is [Apache 2.0](https://github.com/plantonhq/planton/blob/main/LICENSE). The Planton name and logo are trademarks of Planton Cloud, Inc.; see [TRADEMARKS.md](https://github.com/plantonhq/planton/blob/main/TRADEMARKS.md).
