@@ -8,7 +8,7 @@
   <img src="https://github.com/plantonhq/planton/raw/main/.github/icon.png" alt="Planton" width="72">
 </p>
 
-# Planton: The Self-Service Cloud Platform
+<h1 align="center">The Self-Service Cloud Platform</h1>
 
 Your coding agent can already create cloud infrastructure. What it creates is unverified, unrecorded, and unrepeatable: nobody priced it, nobody checked the permissions, nothing remembers what was made, and the next environment starts from a blank prompt.
 
